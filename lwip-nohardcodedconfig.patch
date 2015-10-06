@@ -1,0 +1,12 @@
+--- lwip-1.4.1/contrib/ports/unix/proj/lib/Makefile.orig	2012-12-17 19:07:22.000000000 +0100
++++ lwip-1.4.1/contrib/ports/unix/proj/lib/Makefile	2015-10-04 10:49:39.187499900 +0200
+@@ -86,7 +86,7 @@
+ 
+ include .depend
+ 
+-$(LWIPLIB): $(LWIPOBJS) unixlib.o
+-	$(CC) -g -nostartfiles -shared -o $@ $^
++$(LWIPLIB): $(LWIPOBJS)
++	$(CC) -g -nostartfiles -shared -o $@ $^ -lpthread
+ 
+ .depend: unixlib.c $(LWIPFILES)
